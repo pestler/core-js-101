@@ -206,7 +206,7 @@ function extractEmails(str) {
 function getRectangleString(width, height) {
   let result = '';
   const reCt = {
-    hor: '|',
+    hor: '│',
     ver: '─',
     lv: '┌',
     rv: '┐',
