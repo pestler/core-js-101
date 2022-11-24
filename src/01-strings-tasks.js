@@ -242,7 +242,7 @@ function encodeToRot13(str) {
   const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
 
-  return input.split('').map((el) => {
+  return str.split('').map((el) => {
     const ind = input.indexOf(el);
     return ind !== -1 ? output[ind] : el;
   }).join('');
