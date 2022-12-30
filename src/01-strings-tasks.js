@@ -267,8 +267,6 @@ function isString(value) {
   } return false;
 }
 
-
-
 /**
  * Returns playid card id.
  *
