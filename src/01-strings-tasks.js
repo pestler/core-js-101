@@ -262,10 +262,9 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof value === 'string') {
-    return true;
-  } return false;
+  return Object.prototype.toString.apply(value) === '[object String]';
 }
+
 
 /**
  * Returns playid card id.
