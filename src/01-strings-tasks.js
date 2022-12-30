@@ -249,7 +249,7 @@ function encodeToRot13(str) {
 }
 
 /**
- * Returns true if the value is string; otherwise false.next
+ * Returns true if the value is string; otherwise false
  * @param {string} value
  * @return {boolean}
  *
@@ -261,9 +261,12 @@ function encodeToRot13(str) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (typeof value === 'string') {
+    return true;
+  } return false;
 }
+
 
 
 /**
