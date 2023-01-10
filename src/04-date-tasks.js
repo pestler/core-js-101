@@ -34,8 +34,8 @@ function parseDataFromRfc2822(value) {
  *    '2016-01-19T16:07:37+00:00'    => Date()
  *    '2016-01-19T08:07:37Z' => Date()
  */
-function parseDataFromIso8601(/* value */) {
-  throw new Error('Not implemented');
+function parseDataFromIso8601(value) {
+  return new Date(value);
 }
 
 
@@ -53,8 +53,12 @@ function parseDataFromIso8601(/* value */) {
  *    Date(2012,1,1)    => true
  *    Date(2015,1,1)    => false
  */
-function isLeapYear(/* date */) {
-  throw new Error('Not implemented');
+function isLeapYear(date) {
+  const leapyear = date.getFullYear();
+  if (leapyear % 4) return false;
+  if (leapyear % 100) return true;
+  if (leapyear % 400) return false;
+  return true;
 }
 
 
@@ -73,8 +77,13 @@ function isLeapYear(/* date */) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,10,0,0,250)     => "00:00:00.250"
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
-function timeSpanToString(/* startDate, endDate */) {
-  throw new Error('Not implemented');
+ function timeSpanToString(startDate, endDate) {
+  const diff = endDate - startDate;
+  const milliseconds = diff % 1000;
+  const seconds = Math.floor((diff / 1000) % 60);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  return `${String(hours).padStart(2, 0)}:${String(minutes).padStart(2, 0)}:${String(seconds).padStart(2, 0)}.${String(milliseconds).padStart(3, 0)}`;
 }
 
 
