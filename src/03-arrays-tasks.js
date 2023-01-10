@@ -579,8 +579,10 @@ function getElementByIndexes(arr, indexes) {
  */
 function swapHeadAndTail(arr) {
   const x = Math.floor(arr.length / 2);
-  const res = (a, b) => [...arr].slice(a, b);
-  return res(arr.length - x, arr.length).concat(res(x, x + 1), res(0, x));
+  const res = [...arr];
+  res.splice(0, x, ...arr.slice(arr.length - x));
+  res.splice(res.length - x, x, ...arr.slice(0, x));
+  return res;
 }
 
 
