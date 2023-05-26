@@ -35,8 +35,9 @@ function getRectangleArea(width, height) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
+
 function getCircleCircumference(radius) {
-  return 2 * Math.PI * radius;
+  return radius * 2 * Math.PI;
 }
 
 /**
@@ -88,7 +89,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  return (-1 * a) / b;
+  return -b / a;
 }
 
 
